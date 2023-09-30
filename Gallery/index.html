@@ -4,25 +4,31 @@
 <head>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f7f7f7;
+      margin: 0;
+      padding: 0;
+    }
+
     .swiper-container {
-      width: 100%;
-      height: 100%;
+      width: 80%;
+      max-width: 800px;
+      margin: 0 auto;
     }
 
     .swiper-slide {
       text-align: center;
       font-size: 18px;
       background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .swiper-slide img {
       width: 100%;
-      height: auto;
-    }
-
-    .cover-photo {
-      width: 100%;
-      height: 200px; /* Adjust the height of the cover photo as needed */
+      height: 100%;
       object-fit: cover;
     }
   </style>
@@ -31,20 +37,13 @@
 <body>
   <main>
     <section id="notion-widget">
-      <div class="cover-photo-container">
-        <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/cover.jpg" alt="Cover Photo"
-          class="cover-photo">
-      </div>
-
-      <div class="gallery-container container">
-        <div class="swiper-container">
-          <div class="swiper-wrapper" id="swiper-wrapper"></div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
-          <!-- Add Navigation -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
-        </div>
+      <div class="swiper-container">
+        <div class="swiper-wrapper" id="swiper-wrapper"></div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
       </div>
     </section>
   </main>
