@@ -19,12 +19,23 @@
       width: 100%;
       height: auto;
     }
+
+    .cover-photo {
+      width: 100%;
+      height: 300px; /* Adjust the height of the cover photo as needed */
+      object-fit: cover;
+    }
   </style>
 </head>
 
 <body>
   <main>
-    <section id="gallery">
+    <section id="notion-widget">
+      <div class="cover-photo-container">
+        <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/cover.jpg" alt="Cover Photo"
+          class="cover-photo">
+      </div>
+
       <div class="gallery-container container">
         <div class="swiper-container">
           <div class="swiper-wrapper" id="swiper-wrapper"></div>
