@@ -5,56 +5,49 @@
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: Arial, sans-serif;
       background-color: #f7f7f7;
       margin: 0;
       padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 100vh;
+      min-height: 100vh;
     }
 
-    .swiper-container {
+    .gallery-container {
       width: 80%;
-      max-width: 800px;
-      height: 400px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      grid-gap: 16px;
+      justify-items: center;
     }
 
-    .swiper-slide {
-      text-align: center;
-      font-size: 18px;
-      background: #fff;
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    .gallery-item {
       position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 10px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
-    .swiper-slide img {
+    .gallery-item img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
       transition: transform 0.3s ease;
     }
 
-    .swiper-slide:hover img {
+    .gallery-item:hover img {
       transform: scale(1.05);
     }
 
     .caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      color: #fff;
       padding: 10px;
-      text-align: left;
-    }
-
-    .swiper-pagination-bullet {
-      background-color: #ff6347; /* Customize pagination color */
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.8);
     }
   </style>
 </head>
@@ -62,13 +55,8 @@
 <body>
   <main>
     <section id="notion-widget">
-      <div class="swiper-container">
-        <div class="swiper-wrapper" id="swiper-wrapper"></div>
-        <!-- Add Pagination -->
-        <div class="swiper-pagination"></div>
-        <!-- Add Navigation -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
+      <div class="gallery-container">
+        <!-- Add gallery items dynamically here using JavaScript -->
       </div>
     </section>
   </main>
@@ -78,42 +66,22 @@
     // Array of image file names (assuming 1.jpg to 9.jpg)
     const imageFileNames = Array.from({ length: 9 }, (_, i) => `${i + 1}.jpg`);
 
-    // Fetch image URLs and create swiper slides
-    const swiperWrapper = document.getElementById('swiper-wrapper');
+    // Fetch image URLs and create gallery items
+    const galleryContainer = document.querySelector('.gallery-container');
     imageFileNames.forEach(fileName => {
-      const slide = document.createElement('div');
-      slide.className = 'swiper-slide';
+      const galleryItem = document.createElement('div');
+      galleryItem.className = 'gallery-item';
       const img = document.createElement('img');
       img.src = `https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/${fileName}`;
       img.alt = `Image ${fileName}`;
-      slide.appendChild(img);
+      galleryItem.appendChild(img);
+      galleryContainer.appendChild(galleryItem);
 
-      // Example caption (you can fetch captions from data if available)
-      const caption = document.createElement('div');
-      caption.className = 'caption';
-      caption.innerText = `Caption for Image ${fileName}`;
-      slide.appendChild(caption);
-
-      swiperWrapper.appendChild(slide);
-    });
-
-    // Initialize Swiper
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,
-      spaceBetween: 30,
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      autoplay: {
-        delay: 5000,
-      },
-      loop: true,
-      simulateTouch: true,
+      // Optional: Add captions/descriptions
+      // const caption = document.createElement('div');
+      // caption.className = 'caption';
+      // caption.textContent = `Image ${fileName}`;
+      // galleryItem.appendChild(caption);
     });
   </script>
 </body>
