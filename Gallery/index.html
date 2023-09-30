@@ -6,7 +6,8 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
+      background-color: #000;
+      color: #fff;
       margin: 0;
       padding: 0;
     }
@@ -20,22 +21,35 @@
     .swiper-container {
       width: 100%;
       height: 400px;
-      margin-bottom: 40px;
     }
 
     .swiper-slide {
       text-align: center;
       font-size: 18px;
-      background: #fff;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     }
 
     .swiper-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
+
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.9);
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+    }
+
+    .popup img {
+      max-width: 90%;
+      max-height: 90%;
     }
   </style>
 </head>
@@ -53,36 +67,71 @@
             <div class="swiper-slide">
               <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg" alt="Image 2">
             </div>
+            <div class="swiper-slide">
+              <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg" alt="Image 3">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg" alt="Image 4">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg" alt="Image 5">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg" alt="Image 6">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg" alt="Image 7">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg" alt="Image 8">
+            </div>
+            <div class="swiper-slide">
+              <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg" alt="Image 9">
+            </div>
             <!-- Add more slides for additional images -->
           </div>
-          <!-- Add Pagination -->
-          <div class="swiper-pagination"></div>
           <!-- Add Navigation -->
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>
         </div>
       </div>
     </section>
+
+    <!-- Popup for displaying images -->
+    <div class="popup" id="popup">
+      <img src="" alt="Popup Image" id="popup-image">
+    </div>
   </main>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
     var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 1,
+      slidesPerView: 3, // Number of columns
       spaceBetween: 30,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',
       },
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      autoplay: {
-        delay: 5000, // 5 seconds delay between slides
-      },
       loop: true, // Infinite loop
-      simulateTouch: true, // Enable swipe navigation on desktop
+    });
+
+    // Open image in popup on click
+    var galleryImages = document.querySelectorAll('.swiper-slide img');
+    var popup = document.getElementById('popup');
+    var popupImage = document.getElementById('popup-image');
+
+    galleryImages.forEach(function (image) {
+      image.addEventListener('click', function () {
+        popupImage.src = this.src;
+        popup.style.display = 'flex';
+      });
+    });
+
+    // Close popup on click outside the image
+    popup.addEventListener('click', function (event) {
+      if (event.target === this) {
+        popup.style.display = 'none';
+      }
     });
   </script>
 </body>
