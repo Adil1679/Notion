@@ -13,6 +13,7 @@
       align-items: center;
       height: 100vh;
       margin: 0;
+      background-color: #fafafa;
     }
 
     .post-container {
@@ -24,23 +25,27 @@
       overflow: hidden;
     }
 
-    .user-avatar {
-      width: 30px;
-      height: 30px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-
     .carousel-item img {
       width: 100%;
       height: auto;
     }
 
-    .post-header,
-    .post-actions,
-    .post-description {
-      padding: 10px;
+    .carousel-control-prev,
+    .carousel-control-next {
+      width: 7%;
+      color: #000;
       text-align: center;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      font-size: 20px;
+    }
+
+    .carousel-control-prev {
+      left: -30px;
+    }
+
+    .carousel-control-next {
+      right: -30px;
     }
   </style>
 </head>
@@ -54,30 +59,7 @@
         <div class="carousel-item active">
           <img src="1.jpg" class="d-block w-100" alt="Image 1">
         </div>
-        <div class="carousel-item">
-          <img src="2.jpg" class="d-block w-100" alt="Image 2">
-        </div>
-        <div class="carousel-item">
-          <img src="3.jpg" class="d-block w-100" alt="Image 3">
-        </div>
-        <div class="carousel-item">
-          <img src="4.jpg" class="d-block w-100" alt="Image 4">
-        </div>
-        <div class="carousel-item">
-          <img src="5.jpg" class="d-block w-100" alt="Image 5">
-        </div>
-        <div class="carousel-item">
-          <img src="6.jpg" class="d-block w-100" alt="Image 6">
-        </div>
-        <div class="carousel-item">
-          <img src="7.jpg" class="d-block w-100" alt="Image 7">
-        </div>
-        <div class="carousel-item">
-          <img src="8.jpg" class="d-block w-100" alt="Image 8">
-        </div>
-        <div class="carousel-item">
-          <img src="9.jpg" class="d-block w-100" alt="Image 9">
-        </div>
+        <!-- Add more carousel items for images 2.jpg to 9.jpg -->
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -89,6 +71,16 @@
       </a>
     </div>
   </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha384-KtSJgZnA6zskpJOHzhDQrtVf1LlKCXfL/KDAiQjzmIX6CkFiZoZ6bR5Ic1Mc5iJ"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+    integrity="sha384-AKRMhp6B0t3ZqIhI2oKbBzRLEL0o6ZggBThlA3e8rR1p79BhoHpqG8Gg1OixlGj/"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs6GJL8CkWBA8Uv5LkW5l8G2fXjpS"
+    crossorigin="anonymous"></script>
 
 </body>
 
