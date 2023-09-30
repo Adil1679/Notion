@@ -1,3 +1,6 @@
+Creating a uniform and visually appealing gallery involves various elements like color schemes, typography, transitions, and interactions. Here's an updated version of the code implementing these enhancements to create a uniform grid-based gallery with an elegant design:
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -12,42 +15,34 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      height: 100vh;
     }
 
     .gallery-container {
-      width: 80%;
-      max-width: 1200px;
-      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      grid-gap: 16px;
-      justify-items: center;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      padding: 20px;
     }
 
     .gallery-item {
       position: relative;
-      width: 100%;
       overflow: hidden;
       border-radius: 10px;
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .gallery-item:hover {
+      transform: scale(1.05);
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .gallery-item img {
       width: 100%;
-      height: auto;
+      height: 100%;
       object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.05);
-    }
-
-    .caption {
-      padding: 10px;
-      text-align: center;
-      background-color: rgba(255, 255, 255, 0.8);
     }
   </style>
 </head>
@@ -56,34 +51,27 @@
   <main>
     <section id="notion-widget">
       <div class="gallery-container">
-        <!-- Add gallery items dynamically here using JavaScript -->
+        <!-- Gallery Items -->
+        <div class="gallery-item">
+          <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg" alt="Image 1">
+        </div>
+        <!-- Add more gallery items here -->
+
       </div>
     </section>
   </main>
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-  <script>
-    // Array of image file names (assuming 1.jpg to 9.jpg)
-    const imageFileNames = Array.from({ length: 9 }, (_, i) => `${i + 1}.jpg`);
-
-    // Fetch image URLs and create gallery items
-    const galleryContainer = document.querySelector('.gallery-container');
-    imageFileNames.forEach(fileName => {
-      const galleryItem = document.createElement('div');
-      galleryItem.className = 'gallery-item';
-      const img = document.createElement('img');
-      img.src = `https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/${fileName}`;
-      img.alt = `Image ${fileName}`;
-      galleryItem.appendChild(img);
-      galleryContainer.appendChild(galleryItem);
-
-      // Optional: Add captions/descriptions
-      // const caption = document.createElement('div');
-      // caption.className = 'caption';
-      // caption.textContent = `Image ${fileName}`;
-      // galleryItem.appendChild(caption);
-    });
-  </script>
 </body>
 
 </html>
+```
+
+In this code:
+
+- The gallery items are displayed in a uniform grid using CSS Grid Layout.
+- Each gallery item has a border-radius and a subtle box-shadow for a polished look. When hovered, the item slightly scales up and the shadow becomes more prominent.
+- Images maintain their aspect ratio inside each gallery item due to `object-fit: cover;`.
+- You can add more gallery items by duplicating the `<div class="gallery-item">...</div>` structure and updating the `src` attribute inside the `<img>` tag with the appropriate image URLs.
+
+Feel free to customize the code further, adding more gallery items, adjusting the grid layout, or changing the styles to match your specific design preferences.
