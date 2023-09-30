@@ -4,6 +4,11 @@
 <head>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <style>
+    body, html {
+      height: 100%;
+      overflow: hidden;
+    }
+
     body {
       font-family: Arial, sans-serif;
       background-color: #000;
@@ -19,7 +24,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      height: 100%;
     }
 
     .swiper-container {
@@ -100,7 +105,6 @@
             <div class="swiper-slide">
               <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg" alt="Image 9">
             </div>
-            <!-- Add more slides for additional images -->
           </div>
           <!-- Add Navigation -->
           <div class="swiper-button-next"></div>
@@ -117,6 +121,7 @@
 
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
+    // Your existing script for Swiper initialization and image popup
     var swiper = new Swiper('.swiper-container', {
       slidesPerView: 3, // Number of columns
       spaceBetween: 30,
