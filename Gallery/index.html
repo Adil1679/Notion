@@ -14,8 +14,12 @@
 
     .gallery-container {
       max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
     }
 
     .swiper-container {
@@ -26,6 +30,14 @@
     .swiper-slide {
       text-align: center;
       font-size: 18px;
+      position: relative;
+      cursor: pointer;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .swiper-slide:hover {
+      transform: scale(1.05);
     }
 
     .swiper-slide img {
