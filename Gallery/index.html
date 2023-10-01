@@ -18,9 +18,14 @@
       padding: 0;
     }
 
+    .fotorama-container {
+      width: 640px; /* Set your preferred fixed width */
+      height: 360px; /* Set your preferred fixed height */
+    }
+
     .fotorama {
       width: 100%;
-      height: 100vh;
+      height: 100%;
     }
 
     .fotorama img,
@@ -33,23 +38,25 @@
 </head>
 
 <body>
-  <div class="fotorama" data-nav="thumbs">
-    <!-- Images from GitHub repository -->
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg">
+  <div class="fotorama-container">
+    <div class="fotorama" data-nav="thumbs">
+      <!-- Images from GitHub repository -->
+      <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg">
+      <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg">
+      <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg">
+      <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg">
+      <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg">
+      <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg">
+      <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg">
+      <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg">
+      <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg">
 
-    <!-- Video from GitHub repository -->
-    <video controls>
-      <source src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/10.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+      <!-- Video from GitHub repository -->
+      <video controls>
+        <source src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/10.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+    </div>
   </div>
 
   <script>
