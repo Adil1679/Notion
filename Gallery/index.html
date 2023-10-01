@@ -6,7 +6,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 
   <!-- Fotorama from CDNJS, 19 KB -->
-  <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
 
   <style>
@@ -23,7 +23,10 @@
       height: 100vh;
     }
 
-    .fotorama img {
+    .fotorama img,
+    .fotorama video {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   </style>
@@ -31,7 +34,7 @@
 
 <body>
   <div class="fotorama" data-nav="thumbs">
-    <!-- Add your images here -->
+    <!-- Images from GitHub repository -->
     <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg">
     <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg">
     <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg">
@@ -41,6 +44,12 @@
     <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg">
     <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg">
     <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg">
+
+    <!-- Video from GitHub repository -->
+    <video controls>
+      <source src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/10.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 
   <script>
