@@ -2,7 +2,13 @@
 <html lang="en">
 
 <head>
-  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+  <!-- jQuery 1.8 or later, 33 KB -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+  <!-- Fotorama from CDNJS, 19 KB -->
+  <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
+
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -12,117 +18,34 @@
       padding: 0;
     }
 
-    .swiper-container {
-      padding: 15px;
-    }
-
-    .swiper-slide {
-      min-width: 300px;
-      box-sizing: border-box;
-      margin-right: 15px;
-      cursor: pointer;
-    }
-
-    .swiper-slide img {
+    .fotorama {
       width: 100%;
-      height: auto;
-      border-radius: 10px;
+      height: 100vh;
     }
 
-    .popup {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.9);
-      justify-content: center;
-      align-items: center;
-      z-index: 999;
-    }
-
-    .popup img {
-      max-width: 90%;
-      max-height: 90%;
-      border-radius: 10px;
+    .fotorama img {
+      object-fit: cover;
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <section id="notion-widget">
-      <div class="swiper-container">
-        <div class="swiper-wrapper">
-          <!-- Add your images here -->
-          <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg" alt="Image 1">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg" alt="Image 2">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg" alt="Image 3">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg" alt="Image 4">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg" alt="Image 5">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg" alt="Image 6">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg" alt="Image 7">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg" alt="Image 8">
-          </div>
-          <div class="swiper-slide">
-            <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg" alt="Image 9">
-          </div>
-        </div>
-        <!-- Add Navigation -->
-        <div class="swiper-button-next"></div>
-        <div class="swiper-button-prev"></div>
-      </div>
-    </section>
+  <div class="fotorama" data-nav="thumbs">
+    <!-- Add your images here -->
+    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg">
+    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg">
+    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg">
+    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg">
+    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg">
+    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg">
+    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg">
+    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg">
+    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg">
+  </div>
 
-    <!-- Popup for displaying images -->
-    <div class="popup" id="popup">
-      <img src="" alt="Popup Image">
-    </div>
-  </main>
-
-  <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script>
-    var swiper = new Swiper('.swiper-container', {
-      slidesPerView: 'auto', // Automatically adjust number of slides based on container's width
-      spaceBetween: 15, // Spacing between slides
-      navigation: {
-        nextEl: '.swiper-button-next',
-        prevEl: '.swiper-button-prev',
-      },
-    });
-
-    // Open image in popup on click
-    var galleryImages = document.querySelectorAll('.swiper-slide img');
-    var popup = document.getElementById('popup');
-
-    galleryImages.forEach(function (image, index) {
-      image.addEventListener('click', function () {
-        popup.querySelector('img').src = `https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/${index + 1}.jpg`;
-        popup.style.display = 'flex';
-      });
-    });
-
-    // Close popup on click outside the image
-    popup.addEventListener('click', function (event) {
-      if (event.target === this) {
-        popup.style.display = 'none';
-      }
+    $(document).ready(function() {
+      $('.fotorama').fotorama();
     });
   </script>
 </body>
