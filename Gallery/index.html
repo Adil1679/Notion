@@ -1,53 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
+<div class="slick-carousel">
+  <div><img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg" alt="Image 1"></div>
+  <div><img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg" alt="Image 2"></div>
+  <!-- Add more slides here -->
+</div>
 
-<head>
-  <!-- jQuery 1.8 or later, 33 KB -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-
-  <!-- Fotorama from CDNJS, 19 KB -->
-  <link  href="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script>
-
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #000;
-      color: #fff;
-      margin: 0;
-      padding: 0;
-    }
-
-    .fotorama {
-      width: 100%;
-      height: 100vh;
-    }
-
-    .fotorama img {
-      object-fit: cover;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="fotorama" data-nav="thumbs">
-    <!-- Add your images here -->
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/1.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/2.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/3.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/4.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/5.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/6.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/7.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/8.jpg">
-    <img src="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg" data-thumb="https://raw.githubusercontent.com/Adil1679/Notion/main/Gallery/9.jpg">
-  </div>
-
-  <script>
-    $(document).ready(function() {
-      $('.fotorama').fotorama();
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+  $(document).ready(function(){
+    $('.slick-carousel').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 2000,
     });
-  </script>
-</body>
-
-</html>
+  });
+</script>
