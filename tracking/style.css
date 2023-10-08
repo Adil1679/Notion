@@ -1,0 +1,78 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+.widget-container {
+    text-align: center;
+}
+
+.glass-container {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    margin: 20px auto;
+}
+
+.glass {
+    width: 90px;
+    height: 150px;
+    background-color: #bfefff;
+    border-radius: 10px 10px 0 0;
+    margin: 0 auto;
+    transition: height 0.3s;
+}
+
+.bubbles {
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: #bfefff;
+    border-radius: 50%;
+    animation: bubble-animation 1s infinite;
+}
+
+.buttons button {
+    font-size: 24px;
+    margin: 0 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    background-color: #ccc;
+    margin: 20px auto;
+}
+
+.progress {
+    height: 100%;
+    background-color: #4caf50;
+}
+
+.counter {
+    font-size: 20px;
+    margin-top: 10px;
+}
+
+@keyframes bubble-animation {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
