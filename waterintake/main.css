@@ -1,0 +1,62 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #131515;
+    color: #fff;
+}
+
+.widget-container {
+    text-align: center;
+}
+
+.rounded-square {
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    background-color: #2b2c28;
+    margin: 20px auto;
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center the child elements horizontally */
+    align-items: center; /* Center the child elements vertically */
+}
+
+.circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #339989;
+    position: relative;
+    overflow: hidden;
+}
+.wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 30px;
+    background: linear-gradient(to right, #7de2d1, transparent); /* Wave gradient */
+    animation: wave-animation 1s infinite linear;
+}
+
+.buttons button {
+    font-size: 24px;
+    margin: 0 10px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@keyframes wave-animation {
+    0% {
+        background-position-x: 20;
+    }
+    100% {
+        background-position-x: 100%;
+    }
+}
