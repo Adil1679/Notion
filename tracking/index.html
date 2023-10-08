@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Water Tracking Widget</title>
+    <style>
+        .glass-container {
+            width: 100px;
+            height: 200px;
+            background: url('empty-glass.jpg') no-repeat center; /* Replace 'empty-glass.jpg' with your actual empty glass image file name */
+            background-size: contain;
+            position: relative;
+        }
+
+        .water-level {
+            width: 100px;
+            height: 0;
+            background-color: #4CAF50;
+            position: absolute;
+            bottom: 0;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        button {
+            font-size: 18px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glass-container">
+        <div class="water-level"></div>
+    </div>
+    <div class="buttons">
+        <button id="addBtn">+</button>
+        <button id="subtractBtn">-</button>
+    </div>
+
+    <script>
+        const waterLevelElement = document.querySelector('.water-level');
+        const addBtn = document.getElementById('addBtn');
+        const subtractBtn = document.getElementById('subtractBtn');
+
+        let waterLevel = 0;
+
+        addBtn.addEventListener('click', () => {
+            if (waterLevel < 100) {
+                waterLevel += 10;
+                updateWaterLevel();
+            }
+        });
+
+        subtractBtn.addEventListener('click', () => {
+            if (waterLevel > 0) {
+                waterLevel -= 10;
+                updateWaterLevel();
+            }
+        });
+
+        function updateWaterLevel() {
+            waterLevelElement.style.height = `${waterLevel}%`;
+        }
+    </script>
+</body>
+
+</html>
