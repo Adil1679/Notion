@@ -1,39 +1,48 @@
-@import url(https://fonts.googleapis.com/css?family=Istok+Web);
-@keyframes slidy {
-0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
-}
-* {
-  box-sizing: border-box;
-}
-body, figure { 
-  margin: 0; background: #101010;
-  font-family: Istok Web, sans-serif;
-  font-weight: 100;
-}
-div#captioned-gallery { 
-  width: 100%; overflow: hidden; 
-}
-figure.slider { 
-  position: relative; width: 500%;
-  font-size: 0; animation: 30s slidy infinite; 
-}
-figure.slider figure { 
-  width: 20%; height: auto;
-  display: inline-block;  position: inherit; 
-}
-figure.slider img { width: 100%; height: auto; }
-figure.slider figure figcaption { 
-  position: absolute; bottom: 0;
-  background: rgba(0,0,0,0.4);
-  color: #fff; width: 100%;
-  font-size: 2rem; padding: .6rem; 
-}
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your styles.css file -->
+</head>
+
+<body>
+    <!-- Your HTML content goes here -->
+    <div id="captioned-gallery">
+        <figure class="slider">
+            <!-- First slide -->
+            <figure>
+                <img src="hobbiton-lake.jpg" alt="Hobbiton, New Zealand">
+                <figcaption>Hobbiton, New Zealand</figcaption>
+            </figure>
+
+            <!-- Second slide -->
+            <figure>
+                <img src="wanaka-drowned-tree.jpg" alt="Wanaka, New Zealand">
+                <figcaption>Wanaka, New Zealand</figcaption>
+            </figure>
+
+            <!-- Third slide -->
+            <figure>
+                <img src="utah-peak.jpg" alt="Utah, United States">
+                <figcaption>Utah, United States</figcaption>
+            </figure>
+
+            <!-- Fourth slide -->
+            <figure>
+                <img src="bryce-canyon-utah.jpg" alt="Bryce Canyon, Utah, United States">
+                <figcaption>Bryce Canyon, Utah, United States</figcaption>
+            </figure>
+
+            <!-- Fifth slide -->
+            <figure>
+                <img src="hobbiton-lake.jpg" alt="Hobbiton, New Zealand">
+                <figcaption>Hobbiton, New Zealand</figcaption>
+            </figure>
+        </figure>
+    </div>
+</body>
+
+</html>
